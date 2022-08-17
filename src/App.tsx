@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import useFetch from "./hooks/useFetch";
+import FakeProductAPI from "./interface/FakeProductApi";
 
-function App() {
+export default function App() {
+  const {data: products, loading} = useFetch()
+
+  if(!loading){
+    console.log(products)
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { products && products.map((pro: FakeProductAPI) => <h2 key={pro.id}> {pro.title} </h2>) }
     </div>
   );
 }
-
-export default App;
