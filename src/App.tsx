@@ -1,16 +1,20 @@
 import useFetch from "./hooks/useFetch";
-import FakeProductAPI from "./interface/FakeProductApi";
+import Product from "./product";
+import Header from "./Header";
 
 export default function App() {
-  const {data: products, loading} = useFetch()
+  const { loading } = useFetch();
 
-  if(!loading){
-    console.log(products)
-  }
-  
   return (
     <div className="App">
-      { products && products.map((pro: FakeProductAPI) => <h2 key={pro.id}> {pro.title} </h2>) }
+      <Header />
+      
+      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto">
+        <div className="basis-full lg:basis-1/4">dwadw</div>
+        <div className="basis-full lg:basis-3/4 px-5">
+          {loading ? <p>Loading...</p> : <Product />}
+        </div>
+      </div>
     </div>
   );
 }
