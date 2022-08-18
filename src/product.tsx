@@ -7,6 +7,6 @@ export default function Product({ url }: ProductUrlProps) {
   const { data: products, loading } = useFetch(url);
 
   return (
-    <List prod={products} load={loading} />
+    <Grid prod={products} load={loading} />
   );
 }
