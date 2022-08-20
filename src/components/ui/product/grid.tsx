@@ -17,7 +17,6 @@ export default function Grid() {
             item={product}
             imgClass="h-60 w-96 mb-5 mx-auto"
             innerDivClass="text-center flex-col"
-            titleClass="h-18 overflow-hidden "
             pricesCLass="mb-2"
           />
         </div>
