@@ -1,8 +1,10 @@
 import FakeProductAPI from "../../../interface/FakeProductApi";
 import SingleProduct from "./index";
+import { listOfProducts } from "../../../context/productsContext";
+import { useContext } from "react";
 
-export default function List(props: any) {
-  const products: FakeProductAPI[] = props.prod;
+export default function List() {
+  const products: FakeProductAPI[] = useContext(listOfProducts);
 
   return (
     <div className="grid grid-cols-1">
