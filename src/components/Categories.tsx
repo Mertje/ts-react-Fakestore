@@ -9,16 +9,13 @@ export default function Categories() {
   return (
     <>
       <ul className="pt-3">
-        <div className="m-2 p-3 hover:bg-gray-300 bg-gray-50">
+        <div className="m-2 p-3 hover:bg-gray-300 bg-gray-50 cursor-pointer">
           <li onClick={() => setUrlContext("products/")}>All products</li>
         </div>
         {!loading &&
           categories!.map((category: any) => (
-            <div className="m-2 p-3 hover:bg-gray-300 bg-gray-50">
-              <li
-                onClick={() => setUrlContext(`products/category/${category}`)}
-                key={category}
-              >
+            <div key={category} className="m-2 p-3 hover:bg-gray-300 bg-gray-50 cursor-pointer">
+              <li onClick={() => setUrlContext(`products/category/${category}`)}>
                 {category}
               </li>
             </div>

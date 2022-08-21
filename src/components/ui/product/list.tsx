@@ -9,7 +9,7 @@ export default function List() {
   return (
     <div className="grid grid-cols-1">
       {products!.map((prod: FakeProductAPI) => (
-        <div className="border-b p-3 flex flex" key={prod.id}>
+        <div className="border-b p-3 flex" key={prod.id}>
           <SingleProduct
             item={prod}
             imgClass="col-6 ml-0 h-48 w-48"
